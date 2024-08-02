@@ -1,79 +1,117 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="it">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Eventi</title>
-	<style>
-		body {
-			font-family: Arial, sans-serif;
-			margin: 0;
-			padding: 0;
-			background-color: #f4f4f4;
-		}
-		#my_menu {
-			background-color: #333;
-			color: white;
-			padding: 10px;
-			text-align: right;
-		}
-		#my_menu a {
-			color: white;
-			text-decoration: none;
-			margin: 0 10px;
-		}
-		#chi_siamo {
-			padding: 20px;
-			background-color: #fff;
-			text-align: left;
-		}
-		.carousel {
-			display: flex;
-			overflow-x: auto;
-			scroll-snap-type: x mandatory;
-		}
-		.carousel div {
-			min-width: 300px;
-			margin: 10px;
-			background-color: #fff;
-			padding: 20px;
-			border-radius: 10px;
-			box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-			scroll-snap-align: start;
-		}
-		.carousel div img {
-			max-width: 100%;
-			border-radius: 10px;
-		}
-		.carousel div h3 {
-			margin: 10px 0;
-		}
-	</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventi</title>
+    <link rel="stylesheet" href="../static/css/index.css">
 </head>
 <body>
-	<div id="my_menu">
-		<a href="/login">Login</a> | <a href="#">Registrati</a>
-	</div>
-	<div id="chi_siamo">
-		<p>Noi siamo One Event</p>
-	</div>
-	<div class="carousel">
-		<div>
-			<img src="evento1.jpg" alt="Evento 1">
-			<h3>Evento 1</h3>
-			<p>Descrizione dell'evento 1.</p>
-		</div>
-		<div>
-			<img src="evento2.jpg" alt="Evento 2">
-			<h3>Evento 2</h3>
-			<p>Descrizione dell'evento 2.</p>
-		</div>
-		<div>
-			<img src="evento3.jpg" alt="Evento 3">
-			<h3>Evento 3</h3>
-			<p>Descrizione dell'evento 3.</p>
-		</div>
-		<!-- Aggiungi altri eventi qui -->
-	</div>
+    <!-- Login and Register Buttons -->
+    <div class="login-container">
+        <button class="login-btn">Login</button>
+        <button class="register-btn">Registrati</button>
+    </div>
+
+    <!-- Main Event Card -->
+    <div class="main-event-card">
+        <img src="event-main.jpg" alt="Evento Principale">
+        <h3>Evento Principale</h3>
+        <p>Data e Ora: 20 Agosto 2024</p>
+        <p>Posti Rimasti: 50</p>
+        <button class="participate-btn">Partecipa</button>
+    </div>
+
+    <!-- Event Cards Container -->
+    <div class="scroll-container">
+        <button id="scroll-left" class="scroll-btn">‹</button>
+        <div class="event-cards">
+            <!-- Event Cards -->
+            <div class="card">
+                <img src="event1.jpg" alt="Evento 1">
+                <h3>Evento 1</h3>
+                <p>Data e Ora: 15 Agosto 2024</p>
+                <p>Posti Rimasti: 30</p>
+                <button class="participate-btn">Partecipa</button>
+            </div>
+            <div class="card">
+                <img src="event2.jpg" alt="Evento 2">
+                <h3>Evento 2</h3>
+                <p>Data e Ora: 16 Agosto 2024</p>
+                <p>Posti Rimasti: 25</p>
+                <button class="participate-btn">Partecipa</button>
+            </div>
+            <!-- Add more event cards here -->
+            <div class="card">
+                <img src="event3.jpg" alt="Evento 3">
+                <h3>Evento 3</h3>
+                <p>Data e Ora: 17 Agosto 2024</p>
+                <p>Posti Rimasti: 40</p>
+                <button class="participate-btn">Partecipa</button>
+            </div>
+            <div class="card">
+                <img src="event4.jpg" alt="Evento 4">
+                <h3>Evento 4</h3>
+                <p>Data e Ora: 18 Agosto 2024</p>
+                <p>Posti Rimasti: 60</p>
+                <button class="participate-btn">Partecipa</button>
+            </div>
+            <div class="card">
+                <img src="event5.jpg" alt="Evento 5">
+                <h3>Evento 5</h3>
+                <p>Data e Ora: 19 Agosto 2024</p>
+                <p>Posti Rimasti: 70</p>
+                <button class="participate-btn">Partecipa</button>
+            </div>
+            <div class="card">
+                <img src="event6.jpg" alt="Evento 6">
+                <h3>Evento 6</h3>
+                <p>Data e Ora: 21 Agosto 2024</p>
+                <p>Posti Rimasti: 80</p>
+                <button class="participate-btn">Partecipa</button>
+            </div>
+            <div class="card">
+                <img src="event7.jpg" alt="Evento 7">
+                <h3>Evento 7</h3>
+                <p>Data e Ora: 22 Agosto 2024</p>
+                <p>Posti Rimasti: 90</p>
+                <button class="participate-btn">Partecipa</button>
+            </div>
+            <div class="card">
+                <img src="event8.jpg" alt="Evento 8">
+                <h3>Evento 8</h3>
+                <p>Data e Ora: 23 Agosto 2024</p>
+                <p>Posti Rimasti: 50</p>
+                <button class="participate-btn">Partecipa</button>
+            </div>
+            <div class="card">
+                <img src="event9.jpg" alt="Evento 9">
+                <h3>Evento 9</h3>
+                <p>Data e Ora: 24 Agosto 2024</p>
+                <p>Posti Rimasti: 30</p>
+                <button class="participate-btn">Partecipa</button>
+            </div>
+            <div class="card">
+                <img src="event10.jpg" alt="Evento 10">
+                <h3>Evento 10</h3>
+                <p>Data e Ora: 25 Agosto 2024</p>
+                <p>Posti Rimasti: 20</p>
+                <button class="participate-btn">Partecipa</button>
+            </div>
+        </div>
+        <button id="scroll-right" class="scroll-btn">›</button>
+    </div>
+
+    <!-- About & Contact Section -->
+    <div class="about-section">
+        <h2>Chi Siamo</h2>
+        <p>Informazioni sulla nostra organizzazione.</p>
+        <h2>Contatti</h2>
+        <p>Email: info@evento.com</p>
+        <p>Telefono: +123456789</p>
+        <button class="organize-btn">Organizza un Evento</button>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
