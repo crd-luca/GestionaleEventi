@@ -57,23 +57,62 @@
 	<div id="chi_siamo">
 		<p>Noi siamo One Event</p>
 	</div>
-	<div class="carousel">
-		<div>
-			<img src="evento1.jpg" alt="Evento 1">
-			<h3>Evento 1</h3>
-			<p>Descrizione dell'evento 1.</p>
-		</div>
-		<div>
-			<img src="evento2.jpg" alt="Evento 2">
-			<h3>Evento 2</h3>
-			<p>Descrizione dell'evento 2.</p>
-		</div>
-		<div>
-			<img src="evento3.jpg" alt="Evento 3">
-			<h3>Evento 3</h3>
-			<p>Descrizione dell'evento 3.</p>
-		</div>
-		<!-- Aggiungi altri eventi qui -->
-	</div>
+    <div id="main_event">
+        <h1>Evento Principale</h1>
+        <p>Numero massimo: <span id="max_number">100</span></p>
+        <p class="countdown">Countdown: <span id="countdown">100</span> secondi</p>
+    </div>
+    <div class="carousel-container">
+        <div class="carousel">
+            <div>
+                <img src="evento1.jpg" alt="Evento 1">
+                <h3>Evento 1</h3>
+                <p>Descrizione dell'evento 1.</p>
+            </div>
+            <div>
+                <img src="evento2.jpg" alt="Evento 2">
+                <h3>Evento 2</h3>
+                <p>Descrizione dell'evento 2.</p>
+            </div>
+            <div>
+                <img src="evento3.jpg" alt="Evento 3">
+                <h3>Evento 3</h3>
+                <p>Descrizione dell'evento 3.</p>
+            </div>
+            <!-- Aggiungi altri eventi qui -->
+        </div>
+    </div>
+
+    <script>
+        let currentIndex = 0;
+        const slides = document.querySelectorAll('.carousel div');
+        const totalSlides = slides.length;
+
+        function showNextSlide() {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            document.querySelector('.carousel').style.transform = `translateX(-${currentIndex * 100}%)`;
+        }
+
+        setInterval(showNextSlide, 3000);
+
+        // Incrementa il numero massimo
+        let maxNumber = 0;
+        setInterval(() => {
+            maxNumber++;
+            document.getElementById('max_number').textContent = maxNumber;
+        }, 1000);
+
+        // Countdown
+        let countdown = 10;
+        const countdownElement = document.getElementById('countdown');
+        const countdownInterval = setInterval(() => {
+            countdown--;
+            countdownElement.textContent = countdown;
+            if (countdown === 0) {
+                clearInterval(countdownInterval);
+            }
+        }, 1000);
+        </script>
+	
 </body>
 </html>
