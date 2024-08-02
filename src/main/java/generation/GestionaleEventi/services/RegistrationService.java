@@ -10,7 +10,7 @@ import generation.GestionaleEventi.repositories.ClienteRepository;
 import generation.GestionaleEventi.repositories.GestoreRepository;
 
 @Service
-public class RegisterService {
+public class RegistrationService {
     
     @Autowired
     private ClienteRepository clienteRepository;
