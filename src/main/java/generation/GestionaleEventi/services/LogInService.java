@@ -24,7 +24,7 @@ public class LogInService {
             return p;
         }
 
-        p = clienteRepository.findByEmailAndPassword(email, password);
+        p = gestoreRepository.findByEmailAndPassword(email, password);
         if(p != null){
             return p;
         }

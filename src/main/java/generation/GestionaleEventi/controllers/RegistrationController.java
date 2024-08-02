@@ -23,7 +23,7 @@ public class RegistrationController {
     @Autowired
     private AppService appService;
 
-    @GetMapping("/registrationpage")
+    @GetMapping("/register")
     public String registrationPage(Model model) {
         if (appService.getMessage() != null) {
             model.addAttribute("message", appService.getMessage());
@@ -32,7 +32,7 @@ public class RegistrationController {
         return "registrationpage.html";
     }
 
-    @PostMapping("/register")
+    @PostMapping("/register-form")
     public String register(@RequestParam Map<String, String> params, HttpSession session) {
         String nome = params.get("nome");
         String cognome = params.get("cognome");

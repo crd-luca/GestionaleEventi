@@ -33,26 +33,26 @@ public class LogInController {
             model.addAttribute("message", appService.getMessage());
             appService.setMessage(null);
         }
-        return "loginpage.html";
+        return "login.html";
     }
 
     @PostMapping("/login-form")
     public String login(@RequestParam Map<String,String> params, HttpSession session ) {
-        Persona p = logInService.login(params.get("username"), params.get("password"));
+        Persona p = logInService.login(params.get("email"), params.get("password"));
         if(p != null){
             if(p instanceof Cliente){
                 session.setAttribute("role", "CLIENTE");
                 session.setAttribute("role", p);
-                return "redirect:/area-cliente";
+                return "redirect:/";
             }
             else if(p instanceof Gestore){
                 session.setAttribute("role", "GESTORE");
                 session.setAttribute("role", p);
-                return "redirect:/area-gestore";
+                return "redirect:/";
             }
         }
         appService.setMessage("Errore credenziali errate");
-        return "redirect:/loginpage";
+        return "redirect:/";
     }
 
     @GetMapping("/logout")
