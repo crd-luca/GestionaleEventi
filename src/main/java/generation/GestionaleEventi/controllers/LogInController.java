@@ -27,7 +27,7 @@ public class LogInController {
     @Autowired
     private AppService appService;
 
-    @GetMapping("/loginpage")
+    @GetMapping("/login")
     public String loginpage(Model model) {
         if(appService.getMessage() != null){
             model.addAttribute("message", appService.getMessage());
@@ -36,7 +36,7 @@ public class LogInController {
         return "loginpage.html";
     }
 
-    @PostMapping("/login")
+    @PostMapping("/login-form")
     public String login(@RequestParam Map<String,String> params, HttpSession session ) {
         Persona p = logInService.login(params.get("username"), params.get("password"));
         if(p != null){
