@@ -7,68 +7,111 @@
     <link rel="stylesheet" href="../static/css/index.css">
 </head>
 <body>
-	<div id="my_menu">
-		<a href="#">Login</a> | <a href="#">Registrati</a>
-	</div>
-	<div id="chi_siamo">
-		<p>Noi siamo One Event</p>
-	</div>
-    <div id="main_event">
-        <h1>Evento Principale</h1>
-        <p>Numero massimo: <span id="max_number">100</span></p>
-        <p class="countdown">Countdown: <span id="countdown">100</span> secondi</p>
+    <!-- Login and Register Buttons -->
+    <div class="login-container">
+        <button class="login-btn">Login</button>
+        <button class="register-btn">Registrati</button>
     </div>
-    <div class="carousel-container">
-        <div class="carousel">
-            <div>
-                <img src="evento1.jpg" alt="Evento 1">
+
+    <!-- Main Event Card -->
+    <div class="main-event-card">
+        <img src="event-main.jpg" alt="Evento Principale">
+        <h3>Evento Principale</h3>
+        <p>Data e Ora: 20 Agosto 2024</p>
+        <p>Posti Rimasti: 50</p>
+        <button class="participate-btn">Partecipa</button>
+    </div>
+
+    <!-- Event Cards Container -->
+    <div class="scroll-container">
+        <button id="scroll-left" class="scroll-btn">‹</button>
+        <div class="event-cards">
+            <!-- Event Cards -->
+            <div class="card">
+                <img src="event1.jpg" alt="Evento 1">
                 <h3>Evento 1</h3>
-                <p>Descrizione dell'evento 1.</p>
+                <p>Data e Ora: 15 Agosto 2024</p>
+                <p>Posti Rimasti: 30</p>
+                <button class="participate-btn">Partecipa</button>
             </div>
-            <div>
-                <img src="evento2.jpg" alt="Evento 2">
+            <div class="card">
+                <img src="event2.jpg" alt="Evento 2">
                 <h3>Evento 2</h3>
-                <p>Descrizione dell'evento 2.</p>
+                <p>Data e Ora: 16 Agosto 2024</p>
+                <p>Posti Rimasti: 25</p>
+                <button class="participate-btn">Partecipa</button>
             </div>
-            <div>
-                <img src="evento3.jpg" alt="Evento 3">
+            <!-- Add more event cards here -->
+            <div class="card">
+                <img src="event3.jpg" alt="Evento 3">
                 <h3>Evento 3</h3>
-                <p>Descrizione dell'evento 3.</p>
+                <p>Data e Ora: 17 Agosto 2024</p>
+                <p>Posti Rimasti: 40</p>
+                <button class="participate-btn">Partecipa</button>
             </div>
-            <!-- Aggiungi altri eventi qui -->
+            <div class="card">
+                <img src="event4.jpg" alt="Evento 4">
+                <h3>Evento 4</h3>
+                <p>Data e Ora: 18 Agosto 2024</p>
+                <p>Posti Rimasti: 60</p>
+                <button class="participate-btn">Partecipa</button>
+            </div>
+            <div class="card">
+                <img src="event5.jpg" alt="Evento 5">
+                <h3>Evento 5</h3>
+                <p>Data e Ora: 19 Agosto 2024</p>
+                <p>Posti Rimasti: 70</p>
+                <button class="participate-btn">Partecipa</button>
+            </div>
+            <div class="card">
+                <img src="event6.jpg" alt="Evento 6">
+                <h3>Evento 6</h3>
+                <p>Data e Ora: 21 Agosto 2024</p>
+                <p>Posti Rimasti: 80</p>
+                <button class="participate-btn">Partecipa</button>
+            </div>
+            <div class="card">
+                <img src="event7.jpg" alt="Evento 7">
+                <h3>Evento 7</h3>
+                <p>Data e Ora: 22 Agosto 2024</p>
+                <p>Posti Rimasti: 90</p>
+                <button class="participate-btn">Partecipa</button>
+            </div>
+            <div class="card">
+                <img src="event8.jpg" alt="Evento 8">
+                <h3>Evento 8</h3>
+                <p>Data e Ora: 23 Agosto 2024</p>
+                <p>Posti Rimasti: 50</p>
+                <button class="participate-btn">Partecipa</button>
+            </div>
+            <div class="card">
+                <img src="event9.jpg" alt="Evento 9">
+                <h3>Evento 9</h3>
+                <p>Data e Ora: 24 Agosto 2024</p>
+                <p>Posti Rimasti: 30</p>
+                <button class="participate-btn">Partecipa</button>
+            </div>
+            <div class="card">
+                <img src="event10.jpg" alt="Evento 10">
+                <h3>Evento 10</h3>
+                <p>Data e Ora: 25 Agosto 2024</p>
+                <p>Posti Rimasti: 20</p>
+                <button class="participate-btn">Partecipa</button>
+            </div>
         </div>
+        <button id="scroll-right" class="scroll-btn">›</button>
     </div>
 
-    <script>
-        let currentIndex = 0;
-        const slides = document.querySelectorAll('.carousel div');
-        const totalSlides = slides.length;
+    <!-- About & Contact Section -->
+    <div class="about-section">
+        <h2>Chi Siamo</h2>
+        <p>Informazioni sulla nostra organizzazione.</p>
+        <h2>Contatti</h2>
+        <p>Email: info@evento.com</p>
+        <p>Telefono: +123456789</p>
+        <button class="organize-btn">Organizza un Evento</button>
+    </div>
 
-        function showNextSlide() {
-            currentIndex = (currentIndex + 1) % totalSlides;
-            document.querySelector('.carousel').style.transform = `translateX(-${currentIndex * 100}%)`;
-        }
-
-        setInterval(showNextSlide, 3000);
-
-        // Incrementa il numero massimo
-        let maxNumber = 0;
-        setInterval(() => {
-            maxNumber++;
-            document.getElementById('max_number').textContent = maxNumber;
-        }, 1000);
-
-        // Countdown
-        let countdown = 10;
-        const countdownElement = document.getElementById('countdown');
-        const countdownInterval = setInterval(() => {
-            countdown--;
-            countdownElement.textContent = countdown;
-            if (countdown === 0) {
-                clearInterval(countdownInterval);
-            }
-        }, 1000);
-        </script>
-	
+    <script src="script.js"></script>
 </body>
 </html>
