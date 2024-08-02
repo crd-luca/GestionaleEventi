@@ -1,5 +1,7 @@
-package main.java.generation.GestionaleEventi.services;
+package generation.GestionaleEventi.services;
 import org.springframework.stereotype.Service;
+
+import lombok.Data;
 
 @Service
 @Data
