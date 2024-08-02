@@ -19,7 +19,7 @@ import jakarta.persistence.OneToMany;
 @Table(name = "locale")
 @Inheritance(strategy = InheritanceType.JOINED)
 @Data
-public class Locale {
+public class Locale implements GenericEntity{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
