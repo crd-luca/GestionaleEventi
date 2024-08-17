@@ -17,3 +17,12 @@ public class ClienteService extends GenericService<Long,Cliente, ClienteReposito
         }
     }
 }
+
+    /**
+     * La classe ClienteService estende la classe GenericService, che a sua volta estende JpaRepository.
+     * Questa classe permette di effettuare operazioni CRUD su un'entità Cliente, tramite il suo repository ClienteRepository.
+     * L'entità Cliente è un tipo di Persona che può accedere al sistema tramite username e password.
+     * Il metodo createOrUpdateUser permette di creare o aggiornare un utente Cliente.
+     * Se l'utente esiste già, viene sovrascritto il suo username e password. Se l'utente non esiste, viene creato un nuovo utente con
+     * il dato username e password.
+     */

@@ -23,7 +23,6 @@ import lombok.Data;
                                                 // l'id della tabella persone come chiave primaria e come chiave esterna
                                                 // allo stesso tempo
 @Data
-
 public class Persona implements GenericEntity {
 
     @Id
