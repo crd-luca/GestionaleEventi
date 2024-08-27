@@ -1,4 +1,4 @@
-package generation.GestionaleEventi.controllers;
+package generation.gestionaleEventi.controllers;
 
 import java.util.Map;
 
@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import generation.GestionaleEventi.entities.Persona;
-import generation.GestionaleEventi.services.AppService;
-import generation.GestionaleEventi.services.RegistrationService;
+import generation.gestionaleEventi.entities.Persona;
+import generation.gestionaleEventi.services.AppService;
+import generation.gestionaleEventi.services.RegistrationService;
 import jakarta.servlet.http.HttpSession;
 
 @Controller
@@ -29,7 +29,7 @@ public class RegistrationController {
             model.addAttribute("message", appService.getMessage());
             appService.setMessage(null);
         }
-        return "registrationpage.html";
+        return "register.html";
     }
 
     @PostMapping("/register-form")

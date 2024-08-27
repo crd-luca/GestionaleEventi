@@ -1,9 +1,9 @@
-package generation.GestionaleEventi.services;
+package generation.gestionaleEventi.services;
 
 import java.util.List;
 
-import generation.GestionaleEventi.entities.Locale;
-import generation.GestionaleEventi.repositories.LocaleRepository;
+import generation.gestionaleEventi.entities.Locale;
+import generation.gestionaleEventi.repositories.LocaleRepository;
 
 public class LocaleService extends GenericService<Long, Locale,LocaleRepository>
 {

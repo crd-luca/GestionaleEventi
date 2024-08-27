@@ -1,7 +1,7 @@
-package generation.GestionaleEventi.services;
+package generation.gestionaleEventi.services;
 
-import generation.GestionaleEventi.entities.Cliente;
-import generation.GestionaleEventi.repositories.ClienteRepository;
+import generation.gestionaleEventi.entities.Cliente;
+import generation.gestionaleEventi.repositories.ClienteRepository;
 
 public class ClienteService extends GenericService<Long,Cliente, ClienteRepository>
 {

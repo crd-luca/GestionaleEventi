@@ -1,4 +1,4 @@
-package generation.GestionaleEventi.services;
+package generation.gestionaleEventi.services;
 import org.springframework.stereotype.Service;
 
 import lombok.Data;

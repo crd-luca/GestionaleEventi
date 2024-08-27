@@ -1,9 +1,9 @@
-package generation.GestionaleEventi.services;
+package generation.gestionaleEventi.services;
 
 import java.util.List;
 
-import generation.GestionaleEventi.entities.Evento;
-import generation.GestionaleEventi.repositories.EventoRepository;
+import generation.gestionaleEventi.entities.Evento;
+import generation.gestionaleEventi.repositories.EventoRepository;
 
 public class EventoService extends GenericService<Long,Evento,EventoRepository>
 {

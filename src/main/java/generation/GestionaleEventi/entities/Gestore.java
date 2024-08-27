@@ -1,4 +1,4 @@
-package generation.GestionaleEventi.entities;
+package generation.gestionaleEventi.entities;
 
 import java.util.List;
 

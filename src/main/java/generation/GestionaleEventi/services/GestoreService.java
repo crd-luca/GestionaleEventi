@@ -1,9 +1,9 @@
-package generation.GestionaleEventi.services;
+package generation.gestionaleEventi.services;
 
 import org.springframework.stereotype.Service;
 
-import generation.GestionaleEventi.entities.Gestore;
-import generation.GestionaleEventi.repositories.GestoreRepository;
+import generation.gestionaleEventi.entities.Gestore;
+import generation.gestionaleEventi.repositories.GestoreRepository;
 
 @Service
 public class GestoreService extends GenericService<Long, Gestore, GestoreRepository>

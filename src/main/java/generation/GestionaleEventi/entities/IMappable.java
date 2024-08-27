@@ -1,4 +1,4 @@
-package generation.GestionaleEventi.entities;
+package generation.gestionaleEventi.entities;
 
 import java.lang.reflect.Method;
 import java.sql.Date;

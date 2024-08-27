@@ -1,9 +1,9 @@
-package generation.GestionaleEventi.repositories;
+package generation.gestionaleEventi.repositories;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import generation.GestionaleEventi.entities.Cliente;
-import generation.GestionaleEventi.entities.Persona;
+import generation.gestionaleEventi.entities.Cliente;
+import generation.gestionaleEventi.entities.Persona;
 
 public interface ClienteRepository extends JpaRepository<Cliente,Long>
 {

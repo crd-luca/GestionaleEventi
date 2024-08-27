@@ -8,6 +8,13 @@
             "type": "java",
             "name": "GestionaleEventiApplication",
             "request": "launch",
+            "mainClass": "generation.gestionaleEventi.GestionaleEventiApplication",
+            "projectName": "GestionaleEventi"
+        },
+        {
+            "type": "java",
+            "name": "GestionaleEventiApplication",
+            "request": "launch",
             "mainClass": "generation.GestionaleEventi.GestionaleEventiApplication",
             "projectName": ""
         },

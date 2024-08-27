@@ -1,4 +1,4 @@
-package generation.GestionaleEventi.controllers;
+package generation.gestionaleEventi.controllers;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;

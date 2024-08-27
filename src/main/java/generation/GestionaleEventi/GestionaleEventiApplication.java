@@ -1,4 +1,4 @@
-package generation.GestionaleEventi;
+package generation.gestionaleEventi;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

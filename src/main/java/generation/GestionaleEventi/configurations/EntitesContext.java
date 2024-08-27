@@ -1,4 +1,4 @@
-package generation.GestionaleEventi.configurations;
+package generation.gestionaleEventi.configurations;
 
 import java.util.Map;
 
@@ -6,7 +6,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
 
-import generation.GestionaleEventi.entities.Cliente;
+import generation.gestionaleEventi.entities.Cliente;
 
 @Configuration
 public class EntitesContext {

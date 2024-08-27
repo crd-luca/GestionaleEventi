@@ -1,11 +1,11 @@
-package generation.GestionaleEventi.services;
+package generation.gestionaleEventi.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import generation.GestionaleEventi.entities.Persona;
-import generation.GestionaleEventi.repositories.ClienteRepository;
-import generation.GestionaleEventi.repositories.GestoreRepository;
+import generation.gestionaleEventi.entities.Persona;
+import generation.gestionaleEventi.repositories.ClienteRepository;
+import generation.gestionaleEventi.repositories.GestoreRepository;
 
 @Service
 public class LogInService {

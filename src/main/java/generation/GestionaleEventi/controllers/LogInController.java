@@ -1,4 +1,4 @@
-package generation.GestionaleEventi.controllers;
+package generation.gestionaleEventi.controllers;
 
 import java.util.Map;
 
@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import generation.GestionaleEventi.entities.Cliente;
-import generation.GestionaleEventi.entities.Gestore;
-import generation.GestionaleEventi.entities.Persona;
-import generation.GestionaleEventi.services.AppService;
-import generation.GestionaleEventi.services.LogInService;
+import generation.gestionaleEventi.entities.Cliente;
+import generation.gestionaleEventi.entities.Gestore;
+import generation.gestionaleEventi.entities.Persona;
+import generation.gestionaleEventi.services.AppService;
+import generation.gestionaleEventi.services.LogInService;
 import jakarta.servlet.http.HttpSession;
 
 
