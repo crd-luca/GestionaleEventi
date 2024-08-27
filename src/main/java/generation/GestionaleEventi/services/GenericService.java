@@ -28,7 +28,8 @@ public abstract class GenericService <ID, E extends GenericEntity, J extends Jpa
         return repository.findById(id).orElse(null);
     }
 
-    public E creatOrUpdate(E e){
+   
+ public E creatOrUpdate(E e){
         return repository.save(e);
     }
 
