@@ -1,35 +1,55 @@
-/* style.css */
+/* index.css */
 
 body {
-    background-color: #100e17;
+    background-color: #0b0b0b;
     font-family: 'Open Sans', sans-serif;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
 }
 
-.login-container {
+}.login-container {
     position: absolute;
     top: 20px;
     right: 20px;
-}
-
-.login-btn, .register-btn {
-    background-color: #007bff;
-    color: white;
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .login-container button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
     border: none;
     border-radius: 5px;
-    padding: 10px;
+    cursor: pointer;
+  }
+  
+  .login-container button:hover {
+    background-color: #3e8e41;
+  }
+
+.login-btn, .register-btn, .organize-btn, .participate-btn {
+    margin-left: 10px;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: rgb(255, 255, 255);
+    background-color: #007BFF;
+    border-radius: 5px;
+    border: none;
     cursor: pointer;
     font-size: 16px;
-    margin-left: 10px;
+    transition: background-color 0.3s ease;
 }
 
-.login-btn:hover, .register-btn:hover {
+.login-btn:hover, .register-btn:hover, .organize-btn:hover, .participate-btn:hover {
     background-color: #0056b3;
 }
 
-.login-btn:active, .register-btn:active {
+.login-btn:active, .register-btn:active, .organize-btn:active, .participate-btn:active {
     background-color: #003f7f;
     transform: scale(0.95);
 }
@@ -60,85 +80,31 @@ body {
     margin: 10px;
 }
 
-.participate-btn {
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    padding: 10px;
-    cursor: pointer;
-    font-size: 16px;
-}
-
-.participate-btn:hover {
-    background-color: #0056b3;
-}
-
-.participate-btn:active {
-    background-color: #003f7f;
-    transform: scale(0.95);
-}
-
 /* Event Cards Container */
 .scroll-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
     position: relative;
     width: 100%;
     overflow: hidden;
     padding: 20px 0;
-    display: flex;
-    align-items: center;
-}
-
-.event-cards {
-    display: flex;
-    transition: transform 0.3s ease;
-    will-change: transform;
-}
-
-.card {
-    background-color: #17141d;
-    color: white;
-    width: 220px;
-    height: 300px;
-    margin-right: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    position: relative;
-    transition: transform 0.3s ease;
-}
-
-.card img {
-    width: 100%;
-    height: 60%;
-    object-fit: cover;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-}
-
-.card h3, .card p {
-    margin: 10px;
 }
 
 .scroll-btn {
-    background-color: #007bff;
+    background-color: #007BFF;
     color: white;
     border: none;
-    border-radius: 5px;
     padding: 10px;
     cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
     font-size: 20px;
     position: absolute;
     z-index: 2;
     top: 50%;
     transform: translateY(-50%);
-}
-
-#scroll-left {
-    left: 0;
-}
-
-#scroll-right {
-    right: 0;
 }
 
 .scroll-btn:hover {
@@ -150,6 +116,50 @@ body {
     transform: scale(0.95);
 }
 
+#scroll-left {
+    left: 0;
+}
+
+#scroll-right {
+    right: 0;
+}
+
+.event-cards {
+    display: flex;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    transition: transform 0.3s ease;
+    will-change: transform;
+}
+
+.card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 0 10px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    width: 220px;
+    height: 300px;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    max-width: 100%;
+    height: 60%;
+    object-fit: cover;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.card h3, .card p {
+    margin: 10px;
+}
+
 /* About Section */
 .about-section {
     background-color: #17141d;
@@ -158,22 +168,53 @@ body {
     text-align: center;
 }
 
-.organize-btn {
-    background-color: #007bff;
-    color: white;
-    border: none;
+/* Popup Animato */
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.popup-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
     border-radius: 5px;
-    padding: 10px;
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: black;
+    text-decoration: none;
     cursor: pointer;
-    font-size: 16px;
-    margin-top: 10px;
 }
 
-.organize-btn:hover {
-    background-color: #0056b3;
+#payment-form {
+    display: flex;
+    flex-direction: column;
 }
 
-.organize-btn:active {
-    background-color: #003f7f;
-    transform: scale(0.95);
+#payment-form label {
+    margin: 10px 0 5px;
 }
+
+#payment-form input {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;

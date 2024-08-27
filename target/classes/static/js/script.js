@@ -1,35 +1,38 @@
-// script.js
-
-document.addEventListener('DOMContentLoaded', function() {
-    const scrollContainer = document.querySelector('.scroll-container');
-    const eventCards = document.querySelector('.event-cards');
-    const scrollLeft = document.getElementById('scroll-left');
-    const scrollRight = document.getElementById('scroll-right');
-
-    let currentIndex = 0;
-    const cardWidth = 240; // Width of the card including margin
-    const visibleCards = Math.floor(scrollContainer.clientWidth / cardWidth);
-
-    function updateScrollButtons() {
-        scrollLeft.style.display = currentIndex === 0 ? 'none' : 'block';
-        scrollRight.style.display = currentIndex >= eventCards.children.length - visibleCards ? 'none' : 'block';
+document.addEventListener("DOMContentLoaded", function(event) {
+   
+    const showNavbar = (toggleId, navId, bodyId, headerId) =>{
+    const toggle = document.getElementById(toggleId),
+    nav = document.getElementById(navId),
+    bodypd = document.getElementById(bodyId),
+    headerpd = document.getElementById(headerId)
+    
+    // Validate that all variables exist
+    if(toggle && nav && bodypd && headerpd){
+    toggle.addEventListener('click', ()=>{
+    // show navbar
+    nav.classList.toggle('show')
+    // change icon
+    toggle.classList.toggle('bx-x')
+    // add padding to body
+    bodypd.classList.toggle('body-pd')
+    // add padding to header
+    headerpd.classList.toggle('body-pd')
+    })
     }
-
-    scrollRight.addEventListener('click', () => {
-        if (currentIndex < eventCards.children.length - visibleCards) {
-            currentIndex++;
-            eventCards.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
-        }
-        updateScrollButtons();
+    }
+    
+    showNavbar('header-toggle','nav-bar','body-pd','header')
+    
+    /*===== LINK ACTIVE =====*/
+    const linkColor = document.querySelectorAll('.nav_link')
+    
+    function colorLink(){
+    if(linkColor){
+    linkColor.forEach(l=> l.classList.remove('active'))
+    this.classList.add('active')
+    }
+    }
+    linkColor.forEach(l=> l.addEventListener('click', colorLink))
+    
+     // Your code to run since DOM is loaded and ready
     });
-
-    scrollLeft.addEventListener('click', () => {
-        if (currentIndex > 0) {
-            currentIndex--;
-            eventCards.style.transform = `translateX(-${currentIndex * cardWidth}px)`;
-        }
-        updateScrollButtons();
-    });
-
-    updateScrollButtons();
-});

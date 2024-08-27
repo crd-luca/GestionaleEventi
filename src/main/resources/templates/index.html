@@ -7,9 +7,12 @@
     <link rel="stylesheet" href="../static/css/index.css">
 </head>
 <body>
-    <!-- Login and Register Buttons -->
+    <!-- Animazione sfondo -->
+    <div class="background-animation"></div>
+
+    <!-- Login e Registrazione -->
     <div class="login-container">
-        <button class="login-btn">Login</button>
+        <button class="login-btn">Accedi</button>
         <button class="register-btn">Registrati</button>
     </div>
 
@@ -18,91 +21,62 @@
         <img src="event-main.jpg" alt="Evento Principale">
         <h3>Evento Principale</h3>
         <p>Data e Ora: 20 Agosto 2024</p>
-        <p>Posti Rimasti: 50</p>
-        <button class="participate-btn">Partecipa</button>
+        <p id="main-event-countdown"></p>
+        <p>Posti Rimasti: <span id="main-event-spots">50</span></p>
+        <button class="participate-btn" onclick="showPopup('Evento Principale', '20 Agosto 2024')">Partecipa</button>
     </div>
 
-    <!-- Event Cards Container -->
+    <!-- Carosello Eventi -->
     <div class="scroll-container">
         <button id="scroll-left" class="scroll-btn">‹</button>
         <div class="event-cards">
-            <!-- Event Cards -->
+            <!-- Card Eventi -->
             <div class="card">
                 <img src="event1.jpg" alt="Evento 1">
                 <h3>Evento 1</h3>
                 <p>Data e Ora: 15 Agosto 2024</p>
-                <p>Posti Rimasti: 30</p>
-                <button class="participate-btn">Partecipa</button>
+                <p id="event1-countdown"></p>
+                <p>Posti Rimasti: <span id="event1-spots">30</span></p>
+                <button class="participate-btn" onclick="showPopup('Evento 1', '15 Agosto 2024')">Partecipa</button>
             </div>
             <div class="card">
                 <img src="event2.jpg" alt="Evento 2">
                 <h3>Evento 2</h3>
                 <p>Data e Ora: 16 Agosto 2024</p>
-                <p>Posti Rimasti: 25</p>
-                <button class="participate-btn">Partecipa</button>
+                <p id="event2-countdown"></p>
+                <p>Posti Rimasti: <span id="event2-spots">25</span></p>
+                <button class="participate-btn" onclick="showPopup('Evento 2', '16 Agosto 2024')">Partecipa</button>
             </div>
-            <!-- Add more event cards here -->
-            <div class="card">
-                <img src="event3.jpg" alt="Evento 3">
-                <h3>Evento 3</h3>
-                <p>Data e Ora: 17 Agosto 2024</p>
-                <p>Posti Rimasti: 40</p>
-                <button class="participate-btn">Partecipa</button>
-            </div>
-            <div class="card">
-                <img src="event4.jpg" alt="Evento 4">
-                <h3>Evento 4</h3>
-                <p>Data e Ora: 18 Agosto 2024</p>
-                <p>Posti Rimasti: 60</p>
-                <button class="participate-btn">Partecipa</button>
-            </div>
-            <div class="card">
-                <img src="event5.jpg" alt="Evento 5">
-                <h3>Evento 5</h3>
-                <p>Data e Ora: 19 Agosto 2024</p>
-                <p>Posti Rimasti: 70</p>
-                <button class="participate-btn">Partecipa</button>
-            </div>
-            <div class="card">
-                <img src="event6.jpg" alt="Evento 6">
-                <h3>Evento 6</h3>
-                <p>Data e Ora: 21 Agosto 2024</p>
-                <p>Posti Rimasti: 80</p>
-                <button class="participate-btn">Partecipa</button>
-            </div>
-            <div class="card">
-                <img src="event7.jpg" alt="Evento 7">
-                <h3>Evento 7</h3>
-                <p>Data e Ora: 22 Agosto 2024</p>
-                <p>Posti Rimasti: 90</p>
-                <button class="participate-btn">Partecipa</button>
-            </div>
-            <div class="card">
-                <img src="event8.jpg" alt="Evento 8">
-                <h3>Evento 8</h3>
-                <p>Data e Ora: 23 Agosto 2024</p>
-                <p>Posti Rimasti: 50</p>
-                <button class="participate-btn">Partecipa</button>
-            </div>
-            <div class="card">
-                <img src="event9.jpg" alt="Evento 9">
-                <h3>Evento 9</h3>
-                <p>Data e Ora: 24 Agosto 2024</p>
-                <p>Posti Rimasti: 30</p>
-                <button class="participate-btn">Partecipa</button>
-            </div>
-            <div class="card">
-                <img src="event10.jpg" alt="Evento 10">
-                <h3>Evento 10</h3>
-                <p>Data e Ora: 25 Agosto 2024</p>
-                <p>Posti Rimasti: 20</p>
-                <button class="participate-btn">Partecipa</button>
-            </div>
+            <!-- Aggiungere altre card eventi qui -->
         </div>
         <button id="scroll-right" class="scroll-btn">›</button>
     </div>
 
-    <!-- About & Contact Section -->
+    <!-- Popup Animato -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup()">&times;</span>
+            <h2 id="popup-title">Dettagli Evento</h2>
+            <p id="popup-date">Data e Ora</p>
+            <form id="participation-form">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name" required>
+                <label for="surname">Cognome:</label>
+                <input type="text" id="surname" name="surname" required>
+                <label for="dob">Data di Nascita:</label>
+                <input type="date" id="dob" name="dob" required onchange="checkAge()">
+                <span id="age-error" class="error-message"></span>
+                <label for="payment-method">Metodo di Pagamento:</label>
+                <select id="payment-method" name="payment-method" required>
+                    <option value="carta">Carta di Credito</option>
+                    <option value="paypal">PayPal</option>
+                </select>
+                <button type="submit" onclick="submitForm()">Conferma Partecipazione</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Sezione About & Contatti -->
     <div class="about-section">
         <h2>Chi Siamo</h2>
         <p>Informazioni sulla nostra organizzazione.</p>
@@ -112,6 +86,6 @@
         <button class="organize-btn">Organizza un Evento</button>
     </div>
 
-    <script src="script.js"></script>
+    <script src="../static/js/script.js"></script>
 </body>
 </html>
