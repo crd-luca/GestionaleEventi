@@ -1,0 +1,50 @@
+/* Azzera il margine e il padding di default e imposta l'altezza del body */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    font-size: 16px;
+    justify-content: center; /* Centra orizzontalmente */
+    align-items: center; /* Centra verticalmente */
+    background-color: #00000000; /* Colore di sfondo per maggiore chiarezza */
+
+}
+
+
+
+/* Stile per il contenitore del modulo */
+.contenitore {
+    background: rgb(255, 255, 255);
+    border: 10px solid #ec1342;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+/* Margini per gli elementi del modulo */
+form h2, form h3, form h4, form h5 {
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+form input {
+    margin-bottom: 15px;
+    padding: 8px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+form input[type="button"] {
+    width: auto;
+    background-color: #000000;
+    color: rgb(190, 59, 59);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+form input[type="button"]:hover {
+    background-color: #ffffff;
+}
