@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <!doctype html>
 <html lang="en">
   <head>
@@ -10,15 +9,9 @@
   </head>
   <body>
 
-    <div class="d-grid gap-2 d-md-flex justify-content-md-end"   role="group" aria-label="Basic example">
-       
-        <a href="./login.html" class="btn btn-primary">Accedi</a>
-        <a href="./register.html" class="btn btn-primary">Registrati</a>
-    </div>
-
-
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
+          
           <a class="navbar-brand" href="#">Navbar</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -51,58 +44,9 @@
               <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
           </div>
-=======
-<!DOCTYPE html>
-<html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eventi</title>
-    <link rel="stylesheet" href="../static/css/index.css">
-</head>
-<body>
-    <!-- Animazione sfondo -->
-    <div class="background-animation"></div>
-
-    <!-- Login e Registrazione -->
-    <div class="login-container">
-        <button class="login-btn">Accedi</button>
-        <button class="register-btn">Registrati</button>
-    </div>
-
-    <!-- Main Event Card -->
-    <div class="main-event-card">
-        <img src="event-main.jpg" alt="Evento Principale">
-        <h3>Evento Principale</h3>
-        <p>Data e Ora: 20 Agosto 2024</p>
-        <p id="main-event-countdown"></p>
-        <p>Posti Rimasti: <span id="main-event-spots">50</span></p>
-        <button class="participate-btn" onclick="showPopup('Evento Principale', '20 Agosto 2024')">Partecipa</button>
-    </div>
-
-    <!-- Carosello Eventi -->
-    <div class="scroll-container">
-        <button id="scroll-left" class="scroll-btn">‹</button>
-        <div class="event-cards">
-            <!-- Card Eventi -->
-            <div class="card">
-                <img src="event1.jpg" alt="Evento 1">
-                <h3>Evento 1</h3>
-                <p>Data e Ora: 15 Agosto 2024</p>
-                <p id="event1-countdown"></p>
-                <p>Posti Rimasti: <span id="event1-spots">30</span></p>
-                <button class="participate-btn" onclick="showPopup('Evento 1', '15 Agosto 2024')">Partecipa</button>
-            </div>
-            <div class="card">
-                <img src="event2.jpg" alt="Evento 2">
-                <h3>Evento 2</h3>
-                <p>Data e Ora: 16 Agosto 2024</p>
-                <p id="event2-countdown"></p>
-                <p>Posti Rimasti: <span id="event2-spots">25</span></p>
-                <button class="participate-btn" onclick="showPopup('Evento 2', '16 Agosto 2024')">Partecipa</button>
-            </div>
-            <!-- Aggiungere altre card eventi qui -->
->>>>>>> eugen
+       
+          <a href="../templates/login.html" class="btn btn-primary">Accedi</a>
+          <button type="button"    class="btn btn-primary">registrati</button>
         </div>
       </nav>
       <div class="card mb-3">
@@ -114,7 +58,6 @@
         </div>
       </div>
 
-<<<<<<< HEAD
       <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active" data-bs-interval="10000">
@@ -164,42 +107,3 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   </body>
 </html>
-=======
-    <!-- Popup Animato -->
-    <div id="popup" class="popup">
-        <div class="popup-content">
-            <span class="close-btn" onclick="closePopup()">&times;</span>
-            <h2 id="popup-title">Dettagli Evento</h2>
-            <p id="popup-date">Data e Ora</p>
-            <form id="participation-form">
-                <label for="name">Nome:</label>
-                <input type="text" id="name" name="name" required>
-                <label for="surname">Cognome:</label>
-                <input type="text" id="surname" name="surname" required>
-                <label for="dob">Data di Nascita:</label>
-                <input type="date" id="dob" name="dob" required onchange="checkAge()">
-                <span id="age-error" class="error-message"></span>
-                <label for="payment-method">Metodo di Pagamento:</label>
-                <select id="payment-method" name="payment-method" required>
-                    <option value="carta">Carta di Credito</option>
-                    <option value="paypal">PayPal</option>
-                </select>
-                <button type="submit" onclick="submitForm()">Conferma Partecipazione</button>
-            </form>
-        </div>
-    </div>
-
-    <!-- Sezione About & Contatti -->
-    <div class="about-section">
-        <h2>Chi Siamo</h2>
-        <p>Informazioni sulla nostra organizzazione.</p>
-        <h2>Contatti</h2>
-        <p>Email: info@evento.com</p>
-        <p>Telefono: +123456789</p>
-        <button class="organize-btn">Organizza un Evento</button>
-    </div>
-
-    <script src="../static/js/script.js"></script>
-</body>
-</html>
->>>>>>> eugen
