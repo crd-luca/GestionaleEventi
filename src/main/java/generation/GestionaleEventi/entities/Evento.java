@@ -39,6 +39,9 @@ public class Evento implements GenericEntity{
 
     @Column(name = "prezzo")
     private double prezzo;
+
+    @Column(name = "immagine_url")  // Nuova colonna per l'URL dell'immagine
+    private String immagineUrl;
     
     @ManyToOne
     @JoinColumn(name = "id_locale")

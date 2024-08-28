@@ -2,9 +2,12 @@ package generation.gestionaleEventi.services;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import generation.gestionaleEventi.entities.Evento;
 import generation.gestionaleEventi.repositories.EventoRepository;
 
+@Service
 public class EventoService extends GenericService<Long,Evento,EventoRepository>
 {
     public List<Evento> findByEventoId(Long idEvento){
