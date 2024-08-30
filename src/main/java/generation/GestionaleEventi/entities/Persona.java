@@ -3,6 +3,9 @@ package generation.gestionaleEventi.entities;
 import java.sql.Date;
 import java.util.List;
 
+import org.hibernate.FetchMode;
+import org.hibernate.annotations.Fetch;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -29,7 +32,7 @@ public class Persona implements GenericEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private Long id;
-
+    
     @Column(name = "nome")
     private String nome;
 

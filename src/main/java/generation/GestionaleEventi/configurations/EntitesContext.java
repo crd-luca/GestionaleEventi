@@ -7,6 +7,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
 
 import generation.gestionaleEventi.entities.Cliente;
+import generation.gestionaleEventi.entities.Gestore;
 
 @Configuration
 public class EntitesContext {
@@ -26,5 +27,14 @@ public class EntitesContext {
 
         return c;
 
+    }
+
+    @Bean
+    @Scope("prototype")
+    public Gestore newStudente(Map<String, String> params){
+        Gestore s = new Gestore();
+        s.fromMap(params);
+
+        return s;
     }
 }

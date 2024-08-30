@@ -28,8 +28,7 @@ public class Evento implements GenericEntity{
     @Column(name = "capienza")
     private int capienza;
 
-    @Column(name = "eta_minima")
-    private int etaMinima;
+  
 
     @Column(name = "orario")
     private String orario;
