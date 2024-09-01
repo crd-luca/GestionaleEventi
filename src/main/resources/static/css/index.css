@@ -1,220 +1,274 @@
-/* index.css */
-
-body {
-    background-color: #0b0b0b;
-    font-family: 'Open Sans', sans-serif;
+* {
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
+    box-sizing: border-box;
 }
 
-}.login-container {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    background-color: #fff;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .login-container button {
-    background-color: #4CAF50;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .login-container button:hover {
-    background-color: #3e8e41;
-  }
-
-.login-btn, .register-btn, .organize-btn, .participate-btn {
-    margin-left: 10px;
-    padding: 10px 20px;
-    text-decoration: none;
-    color: rgb(255, 255, 255);
-    background-color: #007BFF;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s ease;
+html, body {
+    width: 100vw;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden; /* Nascondi la scrollbar orizzontale */
+    background: linear-gradient(45deg, #d2001a, #7462ff, #f48e21, #23d5ab);
+    background-size: 300% 300%;
+    animation: color 12s ease-in-out infinite;
 }
 
-.login-btn:hover, .register-btn:hover, .organize-btn:hover, .participate-btn:hover {
-    background-color: #0056b3;
+@keyframes color {
+    0% {
+        background-position: 0 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0 50%;
+    }
 }
 
-.login-btn:active, .register-btn:active, .organize-btn:active, .participate-btn:active {
-    background-color: #003f7f;
-    transform: scale(0.95);
-}
-
-/* Main Event Card */
-.main-event-card {
+/* Navbar styles */
+.navbar {
+    position: fixed;
+    top: 0;
     width: 100%;
-    height: 400px;
-    background-color: #17141d;
+    background-color: rgba(0, 0, 0, 0.8); /* Sfondo scuro semi-trasparente */
     color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Ombra leggera */
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+.logo {
+    height: 40px;
+}
+
+.navbar-right {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-right a, .navbar-right button {
+    background-color: rgba(255, 255, 255, 0.1); /* Sfondo chiaro semi-trasparente */
+    color: #f48e21; /* Colore arancione per i pulsanti */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 10px 20px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s, border-color 0.3s;
+    text-decoration: none; /* Rimuove la sottolineatura dai link */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+
+.navbar-right a:hover, .navbar-right button:hover {
+    background-color: rgba(255, 255, 255, 0.3); /* Sfondo più chiaro al passaggio del mouse */
+    color: #d2001a; /* Colore rosso al passaggio del mouse */
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: scale(1.05);
+}
+
+/* Aggiusta il padding per la navbar fissa */
+body {
+    padding-top: 60px; /* Adjust this value based on the navbar height */
+}
+
+/* Description styles */
+.description-container {
+    position: relative;
+    text-align: center;
+    color: white;
+    padding: 100px 20px;
+    background-color: rgba(0, 0, 0, 0.7); /* Sfondo più scuro per contrasto */
+    max-width: 100%;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    position: relative;
-    margin-bottom: 20px;
 }
 
-.main-event-card img {
+.description-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.description-card, .description-image-card {
+    background-color: rgba(255, 255, 255, 0.9); /* Sfondo leggermente opaco */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombra più marcata */
+    max-width: 400px;
     width: 100%;
-    height: 60%;
-    object-fit: cover;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    height: 100%;
+    transition: transform 0.3s, box-shadow 0.3s;
+    color: #333; /* Colore del testo */
 }
 
-.main-event-card h3, .main-event-card p {
-    margin: 10px;
+.description-card:hover, .description-image-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Ombra più marcata al passaggio del mouse */
 }
 
-/* Event Cards Container */
+.description-image-card img {
+    width: 100%;
+    height: auto; /* Mantiene l'aspect ratio dell'immagine */
+    border-radius: 10px;
+}
+
+/* Events Section styles */
+.events-section {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: rgba(255, 255, 255, 0.9); /* Sfondo leggermente opaco */
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-width: 100%;
+}
+
 .scroll-container {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 20px;
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-    padding: 20px 0;
+    margin: 20px 0;
 }
 
 .scroll-btn {
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.2); /* Sfondo semi-trasparente */
+    color: #f48e21; /* Colore arancione per le frecce */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 15px; /* Dimensione maggiore per le frecce */
     cursor: pointer;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-    font-size: 20px;
-    position: absolute;
-    z-index: 2;
-    top: 50%;
-    transform: translateY(-50%);
+    border-radius: 50%;
+    font-size: 20px; /* Dimensione del font per le frecce */
+    transition: background-color 0.3s, transform 0.3s, border-color 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .scroll-btn:hover {
-    background-color: #0056b3;
-}
-
-.scroll-btn:active {
-    background-color: #003f7f;
-    transform: scale(0.95);
-}
-
-#scroll-left {
-    left: 0;
-}
-
-#scroll-right {
-    right: 0;
+    background-color: rgba(255, 255, 255, 0.4); /* Sfondo più chiaro al passaggio del mouse */
+    color: #d2001a; /* Colore rosso al passaggio del mouse */
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: scale(1.1);
 }
 
 .event-cards {
     display: flex;
     overflow-x: auto;
-    scroll-behavior: smooth;
-    transition: transform 0.3s ease;
-    will-change: transform;
+    padding: 20px;
+    gap: 20px;
+    scrollbar-width: none; /* Per Firefox */
+    width: 100%;
+}
+
+.event-cards::-webkit-scrollbar {
+    display: none; /* Per Chrome, Safari, e Opera */
 }
 
 .card {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin: 0 10px;
+    background-color: rgba(255, 255, 255, 0.9); /* Sfondo leggermente opaco */
     padding: 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-    width: 220px;
-    height: 300px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombra più marcata */
+    transition: transform 0.3s, box-shadow 0.3s;
+    min-width: 300px; /* Larghezza minima per le card */
 }
 
 .card:hover {
     transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Ombra più marcata al passaggio del mouse */
 }
 
 .card img {
-    max-width: 100%;
-    height: 60%;
-    object-fit: cover;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-}
-
-.card h3, .card p {
-    margin: 10px;
-}
-
-/* About Section */
-.about-section {
-    background-color: #17141d;
-    color: white;
-    padding: 20px;
-    text-align: center;
-}
-
-/* Popup Animato */
-.popup {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
     width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0, 0, 0, 0.5);
+    height: auto; /* Mantiene l'aspect ratio dell'immagine */
+    border-radius: 10px;
 }
 
-.popup-content {
-    background-color: #fff;
-    margin: 15% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%;
-    border-radius: 5px;
+.card p {
+    margin: 10px 0;
+    color: #333; /* Colore del testo */
 }
 
-.close-btn {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
+.event-description {
+    font-size: 14px;
+    color: #666; /* Colore del testo della descrizione */
+}
+
+.event-date, .event-price {
+    font-size: 16px;
     font-weight: bold;
+    color: #000; /* Colore del testo della data e del prezzo */
 }
 
-.close-btn:hover,
-.close-btn:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
+/* About Us styles */
+.about-us {
+    text-align: center;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Ombra leggera */
+    max-width: 800px;
 }
 
-#payment-form {
+.about-us:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Ombra più marcata al passaggio del mouse */
+}
+
+.social-buttons {
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
 }
 
-#payment-form label {
-    margin: 10px 0 5px;
-}
-
-#payment-form input {
+.social-btn {
+    background-color: transparent;
+    color: #444;
+    font-size: 24px;
     padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ddd;
+    text-decoration: none;
+    border-radius: 50%;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.social-btn:hover {
+    color: #d2001a; /* Colore rosso al passaggio del mouse */
+    transform: scale(1.2);
+}
+
+/* Pulsanti generali */
+.login-btn, .register-btn, .organize-event-btn, .all-events-btn, .participate-btn {
+    background-color: #f48e21; /* Colore arancione per i pulsanti */
+    color: white;
+    border: 1px solid #f48e21; /* Bordo dello stesso colore */
+    padding: 10px 20px;
+    margin: 0 5px;
+    cursor: pointer;
     border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s, border-color 0.3s;
+}
+
+.login-btn:hover, .register-btn:hover, .organize-event-btn:hover, .all-events-btn:hover, .participate-btn:hover {
+    background-color: #d2001a; /* Colore rosso al passaggio del mouse */
+    border-color: #d2001a; /* Bordo dello stesso colore */
+    transform: scale(1.05);
+}

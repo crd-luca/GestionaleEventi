@@ -1,5 +1,7 @@
 package generation.gestionaleEventi.services;
 
+
+import java.sql.Date;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
@@ -21,6 +23,11 @@ public class EventoService extends GenericService<Long,Evento,EventoRepository>
         else{
             return getRepository().findByNomeContaining(nome);
         }
+    }
+
+    public List<Evento> findByGiorno(Date giorno){
+
+        return getRepository().findByGiorno(giorno);
     }
 
 }

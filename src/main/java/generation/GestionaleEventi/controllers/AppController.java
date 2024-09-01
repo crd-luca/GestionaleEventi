@@ -1,5 +1,6 @@
 package generation.gestionaleEventi.controllers;
 
+import java.util.Comparator;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,6 +22,8 @@ public class AppController {
     public String root(Model model) {
         // Recupera tutti gli eventi dal database
         List<Evento> eventi = eventoService.findAll();
+         // Ordinare per data
+         eventi.sort(Comparator.comparing(Evento::getGiorno));
         // Aggiungi gli eventi al modello
         model.addAttribute("eventi", eventi);
         // Restituisci il nome della vista (index.html) senza estensione

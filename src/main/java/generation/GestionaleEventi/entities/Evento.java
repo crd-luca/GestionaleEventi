@@ -1,5 +1,6 @@
 package generation.gestionaleEventi.entities;
 
+import java.sql.Date;
 import java.util.List;
 
 import jakarta.persistence.Column;
@@ -12,9 +13,11 @@ import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.Table;
 import lombok.Data;
+import lombok.ToString;
 @Entity
 @Table(name = "evento")
 @Data
+ @ToString(exclude = {"locale","persone"})
 public class Evento implements GenericEntity{
 
     @Id
@@ -34,7 +37,7 @@ public class Evento implements GenericEntity{
     private String orario;
 
     @Column(name = "giorno")
-    private String giorno;
+    private Date giorno;
 
     @Column(name = "prezzo")
     private double prezzo;

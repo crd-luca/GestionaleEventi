@@ -8,10 +8,10 @@ import org.springframework.data.repository.query.Param;
 
 import generation.gestionaleEventi.entities.Locale;
 
-public interface LocaleRepository extends JpaRepository<Locale, Long>
-{
-    @Query("SELECT l FROM Locale l WHERE l.id = :idLocale")
-    List<Locale> findByIdLocale(@Param("idLocale") Long idLocale);
+public interface LocaleRepository extends JpaRepository<Locale, Long> {
+
+    @Query("SELECT l FROM Locale l WHERE l.gestore.id = :gestoreId")
+    List<Locale> findByGestoreId(@Param("gestoreId") Long gestoreId);
 
     List<Locale> findByNome(String nome);
 

@@ -1,5 +1,6 @@
 package generation.gestionaleEventi.repositories;
 
+import java.sql.Date;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -46,4 +47,9 @@ public interface EventoRepository extends JpaRepository<Evento,Long>
     List<Evento> findByFilters(@Param("nome") String nome, @Param("idEvento") Long idEvento);
 
     List<Evento> findByNomeContaining(String nome);
+
+
+    public  List<Evento> findByGiorno(Date giorno);
+
+    
 }

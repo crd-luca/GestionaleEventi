@@ -1,42 +1,80 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Home</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-  </head>
-  <body>
-
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid">
-            <form class="d-flex" role="search">
-              <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-              <button class="btn btn-outline-success" type="submit">Search</button>
-            </form>
-            <a href="/loginpage" class="btn btn-primary">Accedi</a>
-            <a href="/register" class="btn btn-primary">Registrati</a>
-        </div>
-    </nav>
-
-    <div class="container mt-4">
-      <div class="row">
-        <!-- Itera attraverso gli eventi e crea una card per ciascuno -->
-        <div th:each="evento : ${eventi}" class="col-md-4 mb-4">
-          <div class="card">
-            <img th:src="@{${evento.immagineUrl}}" class="card-img-top" alt="Evento immagine">
-            <div class="card-body">
-              <h5 class="card-title" th:text="${evento.nome}">Card title</h5>
-              <p class="card-text"><small class="text-body-secondary">Orario <span th:text="${evento.orario}"></span></small></p>
-              <p class="card-text"><small class="text-body-secondary">Prezzo: € <span th:text="${evento.prezzo}"></span></small></p>
-              <p class="card-text"><small class="text-body-secondary">Data: <span th:text="${evento.giorno}"></span></small></p>
-              <a href="#" class="btn btn-primary">Partecipa</a>
+<!DOCTYPE html>
+<html lang="it" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventi - Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Navbar -->
+        <nav class="navbar">
+            <div class="navbar-container">
+                <img src="./images/EventOnelogo.png" alt="Logo" class="logo">
+                <div class="navbar-right">
+                    <button class="all-events-btn" onclick="window.location.href='all-events.html'">Tutti gli Eventi</button>
+                    <a th:href="@{/loginpage}" class="login-btn">Accedi</a>
+                    <a th:href="@{/register}" class="register-btn">Registrati</a>
+                </div>
             </div>
-          </div>
+        </nav>
+
+        <!-- Descrizione -->
+        <header class="description-container">
+            <div class="description-content">
+                <div class="description-card">
+                    <h2>Benvenuti su EventONE</h2>
+                    <p>
+                        EventONE è il progetto che ti connette con tutti gli eventi della tua città in un unico posto. 
+                        Con la nostra piattaforma, puoi esplorare facilmente una vasta gamma di eventi locali, 
+                        dai concerti agli spettacoli teatrali, dalle mostre d'arte alle fiere, e molto altro ancora.
+                    </p>
+                    <p>
+                        Scopri ora tutto ciò che la tua città ha da offrire con EventONE!
+                    </p>
+                </div>
+                <div class="description-image-card">
+                    <img src="./images/main_foto.jpg" alt="Event Image">
+                </div>
+            </div>
+        </header>
+
+        <!-- Carosello Eventi -->
+        <section class="events-section">
+            <h2>Alcuni dei nostri eventi</h2>
+            <div class="scroll-container">
+                <button id="scroll-left" class="scroll-btn">‹</button>
+                <div class="event-cards">
+                    <!-- Iterazione degli eventi dal modello -->
+                    <div th:each="evento : ${eventi}" class="card">
+                        <img th:src="@{${evento.immagineUrl}}" alt="Evento">
+                        <h3 th:text="${evento.nome}">Nome Evento</h3>
+                        <p class="event-date" th:text="'Data: ' + ${evento.giorno}">Data: </p>
+                        <p class="event-time" th:text="'Orario: ' + ${evento.orario}">Orario: </p>
+                        <p class="event-price" th:text="'Prezzo: €' + ${evento.prezzo}">Prezzo: </p>
+                        <button class="participate-btn">Partecipa</button>
+                    </div>
+                </div>
+                <button id="scroll-right" class="scroll-btn">›</button>
+            </div>
+        </section>
+
+        <!-- Chi Siamo -->
+        <div class="about-us">
+            <h2>Chi Siamo</h2>
+            <p>Numero di Telefono: +39 123 456 7890</p>
+            <p>Email: info@example.com</p>
+            <div class="social-buttons">
+                <a href="https://facebook.com" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com" class="social-btn"><i class="fab fa-twitter"></i></a>
+                <a href="https://instagram.com" class="social-btn"><i class="fab fa-instagram"></i></a>
+            </div>
+            <button class="organize-event-btn" onclick="window.location.href='organize.html'">Organizza Evento</button>
         </div>
-      </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-  </body>
+    <script src="index.js"></script>
+</body>
 </html>
