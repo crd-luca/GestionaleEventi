@@ -35,6 +35,9 @@ public class Locale implements GenericEntity {
     @Column(name = "p_iva")
     private String pIva;
 
+    @Column(name = "immagine_url")  // Nuova colonna per l'URL dell'immagine
+    private String immagineUrl;
+
     @ManyToOne
     @JoinColumn(name = "id_gestore")
     private Gestore gestore;

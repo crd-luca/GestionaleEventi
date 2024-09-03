@@ -31,3 +31,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
     startAutoScroll();
 });
+
+function openUpdateModal(id, nome, orario, giorno,prezzo){
+    document.querySelector("#update-modal").hidden = false;
+    var modId = document.querySelector("#mod-id");
+    var modNome = document.querySelector("#mod-nome");
+    var modOrario = document.querySelector("#mod-orario");
+    var modGiorno = document.querySelector("#mod-giorno");
+    var modPrezzo = document.querySelector("#mod-prezzo");
+
+    modId.value = id;
+    modNome.value = nome;
+    modOrario.value = orario;
+    modGiorno.value = giorno;
+    modPrezzo.value = prezzo;
+}

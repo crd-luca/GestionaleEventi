@@ -12,7 +12,6 @@
 <body id="body-pd">
     <header class="header" id="header">
         <div class="header_toggle"> <i class='bx bx-menu' id="header-toggle"></i> </div>
-        <div class="header_img"> <img src="https://i.imgur.com/hczKIze.jpg" alt="Profile Image"> </div>
     </header>
     <div class="l-navbar" id="nav-bar">
         <nav class="nav">
@@ -22,42 +21,68 @@
                     <h6 style="font-size: small; color: #F5F5DC">Benvenuto/a <span th:text="${gestore.nome}"></span><br>nell'area gestore</h6>
                 </a>
                 <div class="nav_list">
-                    <a href="/area-ristorante" class="nav_link">
-                        <i class='bx bx-restaurant nav_icon'></i>
-                        <span class="nav_name">ristoranti</span>
-                    </a>
+                 
                     <a href="/area-gestore/eventi" class="nav_link">
                         <i class='bx bx-party nav_icon'></i>
                         <span class="nav_name">eventi</span>
                     </a>
-                    <a href="/area-messaggi" class="nav_link">
-                        <i class='bx bx-message-square-detail nav_icon'></i>
-                        <span class="nav_name">Messaggi</span>
-                    </a>
+                  
                 </div>
             </div>
             <a href="/logout" class="nav_link">
                 <i class='bx bx-log-out nav_icon'></i>
                 <span class="nav_name">Logout</span>
             </a>
+          
         </nav>
     </div>
     <div class="height-100 bg-light">
         <h4 id="loc">I miei locali</h4>
+        <a href="/createLocale-form">inserisci locale</a>
         <!-- Aggiungi il messaggio di benvenuto qui -->
 
         <div class="card-container">
             <!-- Usa Thymeleaf per iterare sui locali -->
             <div th:each="locale : ${listalocali}" class="card">
-                <img src="" class="card-img-top" alt="Locale Image">
+                <img src="/images/LocaleBronte212_2500px.png" alt="Event Image">
                 <div class="card-body">
                     <h5 class="card-title" th:text="${locale.nome}">Locale Name</h5>
+                    <p class="card-text" th:text="${locale.indirizzo}">indirizzo:</p>
                    -<!--<p class="card-text" th:text="${locale.indirizzo}">Brief description of the locale.</p>--> 
-                    <a href=/creaEvento-form class="btn btn-primary">Crea Evento</a>
+                    <a th:href="|/creaEvento-form?idLocale=${locale.id}|"class="btn btn-primary">Crea Evento</a>
                 </div>
             </div>
         </div>
     </div>
+
+    <div id="update-modal" hidden>
+        <form action="/evento/update" method="post">
+            <input type="hidden" name="id" id="mod-id">
+            <table>
+                <tr>
+                    <td><label for="nome">Nome</label></td>
+                    <td><input type="text" name="nome" id="mod-nome"></td>
+                </tr>
+                <tr>
+                    <td><label for="orario">Orario</label></td>
+                    <td><input type="text" name="orario" id="mod-orario"></td>
+                </tr>
+                <tr>
+                    <td><label for="giorno">Giorno</label></td>
+                    <td><input type="date" name="giorno" id="mod-giorno"></td>
+                </tr>
+                <tr>
+                    <td><label for="prezzo">Prezzo</label></td>
+                    <td><input type="text" name="prezzo" id="mod-prezzo"></td>
+                </tr>
+                <tr>
+                    <td colspan="2"><input style="width: 100%;" type="submit" value="Modifica evento"></td>
+                </tr>
+            </table>
+        </form>
+            </div>
+    
+</div>
 
     <script src="/js/areaGestione.js"></script>
 </body>

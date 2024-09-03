@@ -2,10 +2,17 @@
 <html>
 <head>
     <title>Crea Evento</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="/css/index.css">
+    
 </head>
 <body>
     <h1>Crea Nuovo Evento</h1>
     <form action="/createEvent" method="post" enctype="multipart/form-data">
+        <!-- ID del locale come campo nascosto -->
+       
+        <input type="hidden" id="idLocale" name="idLocale" th:value="${idLocale}">
+
         <label for="nome">Nome Evento:</label>
         <input type="text" id="nome" name="nome" required><br><br>
 
@@ -26,5 +33,11 @@
 
         <input type="submit" value="Crea Evento">
     </form>
+
+    <div id="message-modal" th:if="${message} != null">
+        <button onclick="document.querySelector('#message-modal').hidden=true">Chiudi</button>
+        <hr>
+        <p th:text="${message}"></p>
+    </div>
 </body>
 </html>

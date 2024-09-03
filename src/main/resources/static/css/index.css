@@ -49,7 +49,18 @@ html, body {
 }
 
 .logo {
-    height: 40px;
+    display: block;
+    margin: 0 auto;
+    height: 180px;
+    width: 150x;
+    border-radius: 50%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    font-weight: bold;
+    
 }
 
 .navbar-right {

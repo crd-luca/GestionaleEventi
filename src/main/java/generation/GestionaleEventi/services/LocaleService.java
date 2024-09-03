@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Service;
 
+import generation.gestionaleEventi.entities.Evento;
 import generation.gestionaleEventi.entities.Locale;
 import generation.gestionaleEventi.repositories.LocaleRepository;
 @Service
@@ -22,8 +23,13 @@ public class LocaleService extends GenericService<Long, Locale,LocaleRepository>
         }
     }
 
-    public List<Locale> findByGestoreId(Long gestoreId) {
-        return getRepository().findByGestoreId(gestoreId);
+    public List<Locale> findByGestoreId(Long idGestore) {
+        return getRepository().findByGestoreId(idGestore);
     }
     
+    
+    public List<Evento> findByIdLocale(Long idLocale){
+        return getRepository().findByIdGestore(idLocale);
+
+}
 }

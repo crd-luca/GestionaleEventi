@@ -18,7 +18,7 @@ public class AppController {
       @Autowired
     private EventoService eventoService;
 
-    @GetMapping("/")
+    @GetMapping({"/", "/index"})
     public String root(Model model) {
         // Recupera tutti gli eventi dal database
         List<Evento> eventi = eventoService.findAll();

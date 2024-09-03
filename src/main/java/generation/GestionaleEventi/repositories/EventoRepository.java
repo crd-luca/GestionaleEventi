@@ -50,6 +50,12 @@ public interface EventoRepository extends JpaRepository<Evento,Long>
 
 
     public  List<Evento> findByGiorno(Date giorno);
+    /*select e.*
+from evento e inner join locale l on e.id_locale = l.id
+inner join gestore g on l.id_gestore = g.id
+where g.id =4; */
+    @Query("SELECT e FROM Evento e INNER JOIN Locale l ON e.locale.id = l.id INNER JOIN Gestore g ON l.gestore.id = g.id WHERE g.id = :idGestore")
+    public List<Evento> findByIdGestore(Long idGestore);
 
     
 }

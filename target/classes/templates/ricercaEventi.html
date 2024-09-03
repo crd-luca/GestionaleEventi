@@ -1,7 +1,45 @@
-<!-- eventi/search.html -->
-<h1>Ricerca eventi</h1>
-<ul>
-  <c:forEach var="evento" items="${eventi}">
-    <li>${evento.nome} - ${evento.data}</li>
-  </c:forEach>
-</ul>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Risultati della ricerca</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" href="/css/index.css">
+</head>
+<body>
+  <a style="position: absolute;top: 0;left: 0;" href="/" class="nav_link">
+    <i class='bx bx-log-out nav_icon'></i>
+    <span class="nav_name">Home</span>
+</a>
+  <div class="container mt-4">
+    <!-- Visualizzazione del messaggio di errore -->
+    <div th:if="${error}" class="alert alert-danger" th:text="${error}"></div>
+  
+    <!-- Risultati della ricerca -->
+    <div th:if="${giorno}" class="row">
+        <h2 style="font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;text-align: center;">Risultati della ricerca per la data: <span th:text="${#dates.format(giorno, 'yyyy-MM-dd')}"></span></h2>
+  
+        <!-- Messaggio "Evento non trovato" se la lista è vuota -->
+        <div style="text-align: center; margin-top: 40px;"  th:if="${eventi.empty}" class="alert alert-warning">Nessun evento trovato per la data selezionata.</div>
+  
+        <!-- Mostra i risultati degli eventi trovati -->
+        <div style="display: flex; justify-content: center;margin-top: 20px;" th:each="evento : ${eventi}" class="col-md-4 mb-4">
+            <div class="card">
+                <img  style="width: 300px; height: 200px;" th:src="@{${evento.immagineUrl}}" class="card-img-top" alt="Evento immagine">
+                <div style="text-align: center; font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;"  class="card-body">
+                    <h5 class="card-title" th:text="${evento.nome}">Card title</h5>
+                    <p class="card-text"><small class="text-body-secondary">Orario <span th:text="${evento.orario}"></span></small></p>
+                    <p class="card-text"><small class="text-body-secondary">Prezzo: € <span th:text="${evento.prezzo}"></span></small></p>
+                    <p class="card-text"><small class="text-body-secondary">Data: <span th:text="${evento.giorno}"></span></small></p>
+                    
+                </div>
+            </div>
+        </div>
+    
+    </div>
+  
+  </div>
+
+</body>
+
+</html>

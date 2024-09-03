@@ -13,12 +13,14 @@ import generation.gestionaleEventi.entities.Cliente;
 import generation.gestionaleEventi.entities.Gestore;
 import generation.gestionaleEventi.entities.Persona;
 import generation.gestionaleEventi.services.AppService;
+import generation.gestionaleEventi.services.EventoService;
 import generation.gestionaleEventi.services.LogInService;
 import jakarta.servlet.http.HttpSession;
 
 @Controller
 public class LogInController {
-    
+    @Autowired
+    private EventoService eventoService;
     @Autowired
     private LogInService loginService;
 
@@ -62,13 +64,14 @@ public class LogInController {
             
         }
         System.out.println("Login fallito o tipo di persona non gestore");
-        return "login?error=true";
+        model.addAttribute("message", "Le credenziali sono errate");
+        return "errorPage";
     }
     
     
     @GetMapping("/logout")
     public String logout(HttpSession session) {
         session.invalidate();
-        return "redirect:/loginpage";
+        return "redirect:/";
     }
 }

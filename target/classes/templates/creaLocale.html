@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crea Evento</title>
+</head>
+<body>
+    <h1>Crea Nuovo Locale</h1>
+    <form action="/createLocale" method="post" enctype="multipart/form-data">
+        <!-- ID del locale come campo nascosto -->
+       
+        <label for="nome">Nome Locale:</label>
+        <input type="text" id="nome" name="nome" required><br><br>
+
+        <label for="indirizzo">indirizzo:</label>
+        <input type="text" id="indirizzo" name="indirizzo"><br><br>
+
+        <label for="pIva">pIva:</label>
+        <input type="text" id="pIva" name="pIva"><br><br>
+
+
+        <label for="imageFile">Seleziona Immagine:</label>
+        <input type="file" id="imageFile" name="imageFile" accept="image/*"><br><br>
+
+        <input type="submit" value="Crea Evento">
+    </form>
+
+    <div id="message-modal" th:if="${message} != null">
+        <button onclick="document.querySelector('#message-modal').hidden=true">Chiudi</button>
+        <hr>
+        <p th:text="${message}"></p>
+    </div>
+</body>
+</html>
